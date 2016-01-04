@@ -1,0 +1,37 @@
+component {0823d73b-a3b5-4a8e-99cd-881ba1167700} components/undoclosedtabsbutton.js
+contract @undo/add0n.com/general-startup;1 {0823d73b-a3b5-4a8e-99cd-881ba1167700}
+category profile-after-change undoClosed @undo/add0n.com/general-startup;1
+
+content undoclosedtabsbutton chrome/content/
+
+locale  undoclosedtabsbutton  ca-AD  chrome/locale/ca-AD/
+locale  undoclosedtabsbutton  cs-CS  chrome/locale/cs-CS/
+locale  undoclosedtabsbutton  da-DA  chrome/locale/da-DA/
+locale  undoclosedtabsbutton  de-DE  chrome/locale/de-DE/
+locale  undoclosedtabsbutton  en-US  chrome/locale/en-US/
+locale  undoclosedtabsbutton  es-ES  chrome/locale/es-ES/
+locale  undoclosedtabsbutton  fa-IR  chrome/locale/fa-IR/
+locale  undoclosedtabsbutton  fi-FI  chrome/locale/fi-FI/
+locale  undoclosedtabsbutton  fr-FR  chrome/locale/fr-FR/
+locale  undoclosedtabsbutton  hu-HU  chrome/locale/hu-HU/
+locale  undoclosedtabsbutton  it-IT  chrome/locale/it-IT/
+locale  undoclosedtabsbutton  ko-KR  chrome/locale/ko-KR/
+locale  undoclosedtabsbutton  mk-MK  chrome/locale/mk-MK/
+locale  undoclosedtabsbutton  nb-NO  chrome/locale/nb-NO/
+locale  undoclosedtabsbutton  pl-PL  chrome/locale/pl-PL/
+locale  undoclosedtabsbutton  pt-BR  chrome/locale/pt-BR/
+locale  undoclosedtabsbutton  pt-PT  chrome/locale/pt-PT/
+locale  undoclosedtabsbutton  ro-RO  chrome/locale/ro-RO/
+locale  undoclosedtabsbutton  ru-RU  chrome/locale/ru-RU/
+locale  undoclosedtabsbutton  sk-SK  chrome/locale/sk-SK/
+locale  undoclosedtabsbutton  sl     chrome/locale/sl/
+locale  undoclosedtabsbutton  sr-SR  chrome/locale/sr-SR/
+locale  undoclosedtabsbutton  tr-TR  chrome/locale/tr-TR/
+locale  undoclosedtabsbutton  vi-VI  chrome/locale/vi-VI/
+locale  undoclosedtabsbutton  el     chrome/locale/el/
+locale  undoclosedtabsbutton  zh-CN     chrome/locale/zh-CN/
+
+skin  undoclosedtabsbutton  classic/1.0  chrome/skin/
+
+overlay  chrome://browser/content/browser.xul  chrome://undoclosedtabsbutton/content/firefoxOverlay.xul
+style  chrome://global/content/customizeToolbar.xul  chrome://undoclosedtabsbutton/skin/overlay.css

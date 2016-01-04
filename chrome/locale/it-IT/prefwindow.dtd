@@ -1,0 +1,9 @@
+<!ENTITY undoclosedtabsbuttonToolbar.label "Riapri scheda">
+<!ENTITY undolastclosedtab.label "Riapri scheda">
+<!ENTITY howmany.label "Numero di schede chiuse da ricordare (0-99):">
+<!ENTITY removecontextentry.label "Elimina &apos;Riapri scheda&apos; dal menu contestuale">
+<!ENTITY oldAppearance.label "Use old icon (useful for dark themes)">
+<!ENTITY showOpenAll.label "Show &quot;Restore All Tabs&quot; in the drop-down menu">
+<!ENTITY clearHistory.label "Show &quot;Clear Closed Tabs History&quot; in the drop-down menu">
+<!ENTITY openMenu.label "Open drop-down context-menu on left-click on the toolbar button">
+<!ENTITY onTop.label "Place drop-down controls on top of the list">

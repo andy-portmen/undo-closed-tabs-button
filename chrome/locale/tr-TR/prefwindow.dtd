@@ -1,0 +1,9 @@
+<!ENTITY undoclosedtabsbuttonToolbar.label "Kapatılan Sekmeyi Geri Al">
+<!ENTITY undolastclosedtab.label "Son Kapatılan Sekmeyi Geri Al">
+<!ENTITY howmany.label "Firefox' un kaç tane kapatılan sekmeyi hatırlamasını istiyorsunuz? (0-99)">
+<!ENTITY removecontextentry.label "'Son Kapatılan Sekmeyi Geri Al' seçeneğini sağ tıklama içerik menüsünden kaldır">
+<!ENTITY oldAppearance.label "Use old icon (useful for dark themes)">
+<!ENTITY showOpenAll.label "Show &quot;Restore All Tabs&quot; in the drop-down menu">
+<!ENTITY clearHistory.label "Show &quot;Clear Closed Tabs History&quot; in the drop-down menu">
+<!ENTITY openMenu.label "Open drop-down context-menu on left-click on the toolbar button">
+<!ENTITY onTop.label "Place drop-down controls on top of the list">

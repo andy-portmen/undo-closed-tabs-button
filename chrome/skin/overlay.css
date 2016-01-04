@@ -1,0 +1,14 @@
+@import url("chrome://global/skin/");
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#uctb-toolbar-button {
+  list-style-image: url("chrome://undoclosedtabsbutton/skin/toolbar-button1.png");
+}
+#uctb-toolbar-button[old] {
+  list-style-image: url("chrome://undoclosedtabsbutton/skin/toolbar-button2.png");
+}
+
+#uctb-toolbar-button[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #uctb-toolbar-button {
+  list-style-image: url("chrome://undoclosedtabsbutton/skin/icon.png");
+}

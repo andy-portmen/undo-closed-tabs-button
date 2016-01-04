@@ -1,0 +1,9 @@
+﻿<!ENTITY undoclosedtabsbuttonToolbar.label "Razveljavi zapiranje zavihka">
+<!ENTITY undolastclosedtab.label "Razveljavi zapiranje zadnjega zavihka">
+<!ENTITY howmany.label "Koliko zaprtih zavihkov naj si Firefox zapomni? (0-99)">
+<!ENTITY removecontextentry.label "Odstrani 'Razveljavi zapiranje zadnjega zavihka' iz vsebinskega menija">
+<!ENTITY oldAppearance.label "Uporabi staro ikono (uporabno za temne teme)">
+<!ENTITY showOpenAll.label "Prikaži &quot;Obnovi vse zavihke&quot; v spustnem meniju">
+<!ENTITY clearHistory.label "Prikaži &quot;Počisti zgodovino zaprtih zavihkov&quot; v spustnem meniju">
+<!ENTITY openMenu.label "Odpri spustni vsebinski meni ob levem kliku na gumb orodne vrstice">
+<!ENTITY onTop.label "Umesti spustne nadzornike na vrh seznama">

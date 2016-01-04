@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://undoclosedtabsbutton/skin/overlay.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://undoclosedtabsbutton/locale/prefwindow.dtd">
+
+<overlay id="uctb-toolbar-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle
+        id="bundle_undoclosedtabsbutton"
+        src="chrome://undoclosedtabsbutton/locale/undoclosedtabsbutton.properties" />
+  </stringbundleset>
+
+  <script type="application/x-javascript"
+          src="chrome://undoclosedtabsbutton/content/undo.js" />
+
+  <keyset>
+    <key id="uctb-key" modifiers="" key="" oncommand="undoCloseTab();"/>
+  </keyset>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+  <toolbarbutton id="uctb-toolbar-button"
+    type="menu-button"
+    label="&undoclosedtabsbuttonToolbar.label;"
+    tooltiptext="&undoclosedtabsbuttonToolbar.label;"
+    oncommand="undoClosedButt.onCommand();"
+    context=""
+    onclick="undoClosedButt.rightClickMenu(this, event);"
+    class="toolbarbutton-1 chromeclass-toolbar-additional">
+        <menupopup
+          id="uctb-menu"
+          placespopup="true"
+          oncommand="event.stopPropagation();"
+          tooltip="bhTooltip"
+          onpopupshowing="undoClosedButt.populateUndoSubmenu(this);" />
+  </toolbarbutton>
+  </toolbarpalette>
+
+  <popup id="contentAreaContextMenu">
+    <menuitem id="uctb-contextentry" insertafter="context-stop" label="&undolastclosedtab.label;" oncommand="undoCloseTab();"/>
+  </popup>
+
+</overlay>

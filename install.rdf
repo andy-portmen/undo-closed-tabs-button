@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>undoclosedtabsbutton@supernova00.biz</em:id>
+    <em:type>2</em:type>
+    <em:unpack>false</em:unpack>
+    <em:name>Undo Closed Tabs Button</em:name>
+    <em:version>3.9.8</em:version>
+    <em:creator>Andy Portmen</em:creator>
+    <em:description>Add a toolbar button onto any toolbar to undo closed tabs</em:description>
+    <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+    <em:iconURL>chrome://undoclosedtabsbutton/skin/icon.png</em:iconURL>
+    <em:optionsURL>chrome://undoclosedtabsbutton/content/options.xul</em:optionsURL>
+    <em:optionsType>2</em:optionsType>
+    <em:contributor>Zoolcar9 (code)</em:contributor>
+    <em:contributor>max1million (code)</em:contributor>
+    <em:contributor>Crazy-EyE (code)</em:contributor>
+    <em:contributor>lapega (icons)</em:contributor>
+
+  <!-- Localizations -->
+    <em:localized><!-- Greek -->
+      <Description>
+        <em:locale>el</em:locale>
+        <em:name>Κουμπί αναίρεσης κλεισίματος καρτελών</em:name>
+        <em:description>Προσθήκη ενός κουμπιού εργαλειοθήκης επάνω σε οποιαδήποτε εργαλειοθήκη για αναίρεση κλεισίματος καρτελών</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (κώδικας)</em:contributor>
+        <em:contributor>max1million (κώδικας)</em:contributor>
+        <em:contributor>Crazy-EyE (κώδικας)</em:contributor>
+        <em:contributor>lapega (εικονίδια)</em:contributor>
+        <em:translator>Γιώργος Μαλαμάς</em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Catalan -->
+      <Description>
+        <em:locale>ca-AD</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Afegeix un botó a la barra d'eines per a reobrir pestanyes tancades</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Czech -->
+      <Description>
+        <em:locale>cs-CS</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Přidá panel nástrojů pro otevření zavřených panelů</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Danish -->
+      <Description>
+        <em:locale>da-DA</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Tilføjer en værktøjslinje-knap til at fortryde lukning af faneblade</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- German -->
+      <Description>
+        <em:locale>de-DE</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Stellt eine Schaltfläche zur Wiederherstellung geschlossener Tabs bereit</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Spanish -->
+      <Description>
+        <em:locale>es-ES</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Agregar un botón a una barra de herramientas y/o a la barra de pestañas para re-abrir las pestañas cerradas</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Farsi - Iran -->
+      <Description>
+        <em:locale>fa-IR</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>افزودن یک کلید در نوار ابزار برای بازگردانی تب های بسته شده</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Finnish -->
+      <Description>
+        <em:locale>fi-FI</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Lisää työkalupalkki-painikkeen suljettujen välilehtien uudelleen avaamiseen</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- French -->
+      <Description>
+        <em:locale>fr-FR</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Ajoute un bouton à la barre d'outils et/ou à la barre d'onglets permettant d'annuler la fermeture des onglets.</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Hungarian -->
+      <Description>
+        <em:locale>hu-HU</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Eszköztárgomb a nemrég bezárt lapok újranyitásához</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Italian -->
+      <Description>
+        <em:locale>it-IT</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Permette di aggiungere un pulsante di riapertura delle schede nelle barre degli strumenti e nella barra delle schede</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Korean -->
+      <Description>
+        <em:locale>ko-KR</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>닫힌 탭을 복원하는 단추를 도구 모음에 추가합니다.</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Macedonian -->
+      <Description>
+        <em:locale>mk-MK</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Додава алатник и/или копче во лентата за јазичиња за отповикување на затворените јазичиња</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Norwegian -->
+      <Description>
+        <em:locale>nb-NO</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Legg til en verktøylinjeknapp for gjenoppretting av lukkede faner</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Polish -->
+      <Description>
+        <em:locale>pl-PL</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Dodaje przycisk narzędziowy do przywracania zamkniętych kart</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Brazilian Portuguese -->
+      <Description>
+        <em:locale>pt-BR</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Adiciona um botão na barra de ferramentas para desfazer abas fechadas</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- European Portuguese -->
+      <Description>
+        <em:locale>pt-PT</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Adiciona um botão à barra de ferramentas para reabrir separadores fechados recentemente</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Romanian -->
+      <Description>
+        <em:locale>ro-RO</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Adauga un buton pentru a redeschide tab-urile inchise</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Russian -->
+      <Description>
+        <em:locale>ru-RU</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Добавляет кнопку, отменяющую закрытие вкладок, на панель инструментов</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Slovakian -->
+      <Description>
+        <em:locale>sk-SK</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Pridáva na panel nástrojov tlačidlo na opätovné otváranie zatvorených kariet</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Serbian -->
+      <Description>
+        <em:locale>sr-SR</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Додаје алатну траку и/или дугме за враћање затворених језичака</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Turkish -->
+      <Description>
+        <em:locale>tr-TR</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Araç çubuğuna ve/veya sekme çubuğuna kapatılan sekmeleri geri al düğmesi ekle</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Vietnamese -->
+      <Description>
+        <em:locale>vi-VI</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Thêm thanh công cụ và/hoặc nút công cụ để phục hồi các thẻ đã bị đóng</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (code)</em:contributor>
+        <em:contributor>max1million (code)</em:contributor>
+        <em:contributor>Crazy-EyE (code)</em:contributor>
+        <em:contributor>lapega (icons)</em:contributor>
+        <em:translator></em:translator>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Slovenian -->
+      <Description>
+        <em:locale>sl</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>Dodajte gumb na katerokoli orodno vrstico, da razveljavite zapiranje zavihkov</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (koda)</em:contributor>
+        <em:contributor>max1million (koda)</em:contributor>
+        <em:contributor>Crazy-EyE (koda)</em:contributor>
+        <em:contributor>lapega (ikone)</em:contributor>
+        <em:translator/>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+    <em:localized><!-- Chinese Simplified  -->
+      <Description>
+        <em:locale>zh-CN</em:locale>
+        <em:name>Undo Closed Tabs Button</em:name>
+        <em:description>在工具栏上添加恢复关闭的标签的工具栏按钮</em:description>
+        <em:creator>Andy Portmen</em:creator>
+        <em:contributor>Zoolcar9 (koda)</em:contributor>
+        <em:contributor>max1million (koda)</em:contributor>
+        <em:contributor>Crazy-EyE (koda)</em:contributor>
+        <em:contributor>lapega (ikone)</em:contributor>
+        <em:translator/>
+        <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
+      </Description>
+    </em:localized>
+  <!-- Target Applications -->
+    <em:targetApplication><!-- Firefox -->
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>4.0</em:minVersion>
+        <em:maxVersion>32.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+  </Description>
+</RDF>

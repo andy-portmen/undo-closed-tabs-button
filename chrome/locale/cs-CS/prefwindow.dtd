@@ -1,0 +1,9 @@
+<!ENTITY undoclosedtabsbuttonToolbar.label "Otevřít zavřený panel">
+<!ENTITY undolastclosedtab.label "Otevřít poslední zavřený panel">
+<!ENTITY howmany.label "Kolik zavřených panelů si má Firefox pamatovat? (0-99)">
+<!ENTITY removecontextentry.label "Odebrat Otevřít poslední zavřený panel z kontextového menu pravého tlačítka">
+<!ENTITY oldAppearance.label "Use old icon (useful for dark themes)">
+<!ENTITY showOpenAll.label "Show &quot;Restore All Tabs&quot; in the drop-down menu">
+<!ENTITY clearHistory.label "Show &quot;Clear Closed Tabs History&quot; in the drop-down menu">
+<!ENTITY openMenu.label "Open drop-down context-menu on left-click on the toolbar button">
+<!ENTITY onTop.label "Place drop-down controls on top of the list">

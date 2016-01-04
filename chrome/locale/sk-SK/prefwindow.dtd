@@ -1,0 +1,9 @@
+<!ENTITY undoclosedtabsbuttonToolbar.label "Undo Closed Tabs">
+<!ENTITY undolastclosedtab.label "Otvoriť poslednú zatvorenú kartu">
+<!ENTITY howmany.label "Koľko zatvorených kariet si má Firefox zapamätať? (0-99)">
+<!ENTITY removecontextentry.label "Odstrániť otváranie poslednej zatvorenej karty z kontextovej ponuky pravého tlačidla">
+<!ENTITY oldAppearance.label "Use old icon (useful for dark themes)">
+<!ENTITY showOpenAll.label "Show &quot;Restore All Tabs&quot; in the drop-down menu">
+<!ENTITY clearHistory.label "Show &quot;Clear Closed Tabs History&quot; in the drop-down menu">
+<!ENTITY openMenu.label "Open drop-down context-menu on left-click on the toolbar button">
+<!ENTITY onTop.label "Place drop-down controls on top of the list">

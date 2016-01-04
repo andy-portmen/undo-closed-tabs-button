@@ -1,0 +1,9 @@
+<!ENTITY undoclosedtabsbuttonToolbar.label "恢复关闭标签">
+<!ENTITY undolastclosedtab.label "恢复最后关闭的标签">
+<!ENTITY howmany.label "你希望 Firefox 记忆多少关闭的标签？(0-99)">
+<!ENTITY removecontextentry.label "从右键菜单中移除 '恢复最后关闭的标签'">
+<!ENTITY oldAppearance.label "使用旧式图标 (对采用 dark 主题时有帮助)">
+<!ENTITY showOpenAll.label "在下拉菜单中显示 &quot;恢复所有标签&quot;">
+<!ENTITY clearHistory.label "在下拉菜单中显示 &quot;清除关闭标签历史记录&quot;">
+<!ENTITY openMenu.label "左键单击工具栏按钮时打开下拉菜单">
+<!ENTITY onTop.label "下拉控件放置在列表的顶部">

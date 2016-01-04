@@ -1,0 +1,9 @@
+<!ENTITY undoclosedtabsbuttonToolbar.label "Przywróć kartę">
+<!ENTITY undolastclosedtab.label "Przywróć ostatnio zamkniętą kartę">
+<!ENTITY howmany.label "Ilość zapamiętywanych zamkniętych kart (0-99)">
+<!ENTITY removecontextentry.label "Nie wyświetlaj w menu kontekstowym elementu &quot;Przywróć ostatnio zamkniętą kartę&quot;">
+<!ENTITY oldAppearance.label "Use old icon (useful for dark themes)">
+<!ENTITY showOpenAll.label "Show &quot;Restore All Tabs&quot; in the drop-down menu">
+<!ENTITY clearHistory.label "Show &quot;Clear Closed Tabs History&quot; in the drop-down menu">
+<!ENTITY openMenu.label "Open drop-down context-menu on left-click on the toolbar button">
+<!ENTITY onTop.label "Place drop-down controls on top of the list">

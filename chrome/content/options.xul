@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE mydialog SYSTEM "chrome://undoclosedtabsbutton/locale/prefwindow.dtd">
+
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <setting type="integer" pref="browser.sessionstore.max_tabs_undo" title="&howmany.label;" />
+  <setting type="bool" pref="extensions.undoclosedtabsbutton.removecontextentry" title="&removecontextentry.label;" />
+  <setting pref="extensions.undoclosedtabsbutton.openMenu" type="bool" title="&openMenu.label;"/>
+  <setting pref="extensions.undoclosedtabsbutton.showOpenAll" type="bool" title="&showOpenAll.label;"/>
+  <setting pref="extensions.undoclosedtabsbutton.clearHistory" type="bool" title="&clearHistory.label;"/>
+  <setting pref="extensions.undoclosedtabsbutton.onTop" type="bool" title="&onTop.label;"/>
+  <setting pref="extensions.undoclosedtabsbutton.oldAppearance" type="bool" title="&oldAppearance.label;"/>
+</vbox>
