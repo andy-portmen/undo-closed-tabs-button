@@ -1,0 +1,9 @@
+<!ENTITY undoclosedtabsbuttonToolbar.label "Върни затворените раздели">
+<!ENTITY undolastclosedtab.label "Върни последния затворен раздел">
+<!ENTITY howmany.label "Колко затворени раздела искате Firefox да запомни? (0-99)">
+<!ENTITY removecontextentry.label "Премахни 'Върни последния затворен раздел' от контекстното меню">
+<!ENTITY oldAppearance.label "Използвай старата иконка (полезно при тъмна тема)">
+<!ENTITY showOpenAll.label "Показвай &quot;Възстанови всички раздели&quot; в падащото меню">
+<!ENTITY clearHistory.label "Показвай &quot;Изчисти историята на разделите&quot; в падащото меню">
+<!ENTITY openMenu.label "Отвори падащото меню с ляв клик на бутона на лентата">
+<!ENTITY onTop.label "Постави контролите най-отгоре в списъка">
