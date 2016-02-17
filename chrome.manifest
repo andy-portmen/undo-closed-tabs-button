@@ -4,6 +4,7 @@ category profile-after-change undoClosed @undo/add0n.com/general-startup;1
 
 content undoclosedtabsbutton chrome/content/
 
+locale  undoclosedtabsbutton  bg  chrome/locale/bg/
 locale  undoclosedtabsbutton  ca-AD  chrome/locale/ca-AD/
 locale  undoclosedtabsbutton  cs-CS  chrome/locale/cs-CS/
 locale  undoclosedtabsbutton  da-DA  chrome/locale/da-DA/
