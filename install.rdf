@@ -6,7 +6,7 @@
     <em:type>2</em:type>
     <em:unpack>false</em:unpack>
     <em:name>Undo Closed Tabs Button</em:name>
-    <em:version>3.9.8</em:version>
+    <em:version>3.9.9</em:version>
     <em:creator>Andy Portmen</em:creator>
     <em:description>Add a toolbar button onto any toolbar to undo closed tabs</em:description>
     <em:homepageURL>http://mybrowseraddon.com/undo.html</em:homepageURL>
