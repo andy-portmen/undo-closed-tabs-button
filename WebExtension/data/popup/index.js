@@ -3,9 +3,16 @@
 var cache = [];
 var png = chrome.runtime.getURL('/data/popup/document.png');
 
-function restore (ids, urls = []) {
-  let id = ids.shift();
-  let url = urls.shift();
+var notify = msg => chrome.notifications.create(null, {
+  type: 'basic',
+  iconUrl: '/data/icons/notification/48.png',
+  title: 'Undo Closed Tabs Button',
+  message: msg.message || msg,
+});
+
+function restore(ids, urls = []) {
+  const id = ids.shift();
+  const url = urls.shift();
 
   if (!id || id === 'undefined') {
     chrome.tabs.create({
@@ -32,22 +39,28 @@ function restore (ids, urls = []) {
 }
 
 chrome.storage.local.get({
-  maxResults: 7
+  maxResults: 7,
+  useGoogle: true
 }, prefs => {
-  chrome.sessions.getRecentlyClosed(prefs, (sessions) => {
+  chrome.sessions.getRecentlyClosed({
+    maxResults: prefs.maxResults
+  }, sessions => {
     cache = sessions;
-    let item = document.querySelector('li');
-    let ul = document.querySelector('ul');
-    let lastChild = document.querySelector('.separator').parentNode;
+    const item = document.querySelector('li');
+    const ul = document.querySelector('ul');
+    const lastChild = document.querySelector('.separator').parentNode;
 
-    function add (tab, window) {
-      let li = item.cloneNode(true);
+    function add(tab, window) {
+      const li = item.cloneNode(true);
       li.querySelector('span').textContent = tab.title || 'No title';
       if (navigator.userAgent.indexOf('Firefox') === -1) {
-        li.style['background-image'] =  `url(chrome://favicon/${tab.url})`;
+        li.style['background-image'] = `url(chrome://favicon/${tab.url})`;
+      }
+      else if (prefs.useGoogle) {
+        li.style['background-image'] = `url(http://www.google.com/s2/favicons?domain_url=${tab.url})`;
       }
       else {
-        li.style['background-image'] =  `url(${png})`;
+        li.style['background-image'] = `url(${png})`;
       }
       li.dataset.id = tab.sessionId;
       li.dataset.url = tab.url;
@@ -63,7 +76,7 @@ chrome.storage.local.get({
         add(session.tab);
       }
       else if (session.window) {
-        session.window.tabs.forEach((tab) => add(tab, session.window));
+        session.window.tabs.forEach(tab => add(tab, session.window));
       }
     });
     if (sessions.length) {
@@ -71,19 +84,19 @@ chrome.storage.local.get({
     }
     else {
       item.dataset.disabled = true;
+      document.querySelector('[data-cmd="clear-history"]').dataset.disabled = true;
+      document.querySelector('[data-cmd="open-all"]').dataset.disabled = true;
+
     }
   });
 });
 
-document.addEventListener('click', e => {
-  let target = e.target;
+document.addEventListener('click', ({target}) => {
   if (target.dataset.id && target.dataset.disabled !== 'true') {
     restore([target.dataset.id], [target.dataset.url]);
   }
   if (target.dataset.cmd === 'open-all') {
-    let ids = cache.map(session => {
-      return session.window ? session.window.sessionId : session.tab.sessionId;
-    });
+    const ids = cache.map(session => session.window ? session.window.sessionId : session.tab.sessionId);
     if (ids) {
       restore(ids);
     }
@@ -94,6 +107,15 @@ document.addEventListener('click', e => {
   else if (target.dataset.cmd === 'open-history') {
     chrome.tabs.create({
       url: 'chrome://history/'
+    }, () => {
+      if (chrome.runtime.lastError) {
+        notify(chrome.runtime.lastError);
+      }
     });
+  }
+  else if (target.dataset.cmd === 'clear-history') {
+    chrome.browsingData.remove({}, {
+      'history': true
+    }, () => window.close());
   }
 });

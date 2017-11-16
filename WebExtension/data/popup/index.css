@@ -19,9 +19,6 @@ li {
   height: 26px;
   line-height: 26px;
 }
-li:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
 li[data-window=true] {
   background-image: url('window.png');
 }
@@ -37,7 +34,10 @@ li>span {
   text-overflow: ellipsis;
   pointer-events: none;
 }
-li:hover>span {
+li:not([data-disabled=true]):hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+li:not([data-disabled=true]):hover>span {
   border-left-color: transparent;
 }
 li>div {
@@ -50,7 +50,7 @@ li>div:not([data-id]) {
   display: none;
 }
 li[data-disabled=true] {
-  color: #dddede;
+  color: #cecfcf;
 }
 .separator {
   border-top: 1px solid  #dddede;

@@ -1,19 +1,25 @@
 'use strict';
 
-function restore () {
+function restore() {
   chrome.storage.local.get({
-    maxResults: 7
-  }, (prefs) => {
+    maxResults: 7,
+    useGoogle: true,
+    faqs: true
+  }, prefs => {
     document.getElementById('maxResults').value = prefs.maxResults;
+    document.getElementById('useGoogle').checked = prefs.useGoogle;
+    document.getElementById('faqs').checked = prefs.faqs;
   });
 }
-function save () {
-  var maxResults = +document.getElementById('maxResults').value;
+function save() {
+  var maxResults = Number(document.getElementById('maxResults').value);
   chrome.storage.local.set({
-    maxResults: Math.max(2, maxResults)
+    maxResults: Math.max(2, maxResults),
+    useGoogle: document.getElementById('useGoogle').checked,
+    faqs: document.getElementById('faqs').checked,
   }, () => {
     restore();
-    let status = document.getElementById('status');
+    const status = document.getElementById('status');
     status.textContent = 'Options saved.';
     setTimeout(() => status.textContent = '', 750);
   });

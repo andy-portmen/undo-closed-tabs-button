@@ -1,10 +1,13 @@
 'use strict';
 
-// FAQs
-chrome.storage.local.get('version', prefs => {
-  let version = chrome.runtime.getManifest().version;
-  let isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
-  if (isFirefox ? !prefs.version : prefs.version !== version) {
+// FAQs & Feedback
+chrome.storage.local.get({
+  'version': null,
+  'faqs': navigator.userAgent.indexOf('Firefox') === -1
+}, prefs => {
+  const version = chrome.runtime.getManifest().version;
+
+  if (prefs.version ? (prefs.faqs && prefs.version !== version) : true) {
     chrome.storage.local.set({version}, () => {
       chrome.tabs.create({
         url: 'http://mybrowseraddon.com/undo.html?version=' + version +
@@ -13,7 +16,8 @@ chrome.storage.local.get('version', prefs => {
     });
   }
 });
-(function () {
-  let {name, version} = chrome.runtime.getManifest();
+
+{
+  const {name, version} = chrome.runtime.getManifest();
   chrome.runtime.setUninstallURL('http://add0n.com/feedback.html?name=' + name + '&version=' + version);
-})();
+}

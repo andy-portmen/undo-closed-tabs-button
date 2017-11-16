@@ -9,21 +9,36 @@
       font-size: 13px;
     }
     input { width: 42px; }
+    td:first-child {
+      width: 24px;
+    }
   </style>
 </head>
 
 <body>
+  <table width=100%>
+    <tr>
+      <td></td>
+      <td>
+        <label>
+          Number of undo items displayed in the popup
+          <input type="number" id="maxResults">
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="useGoogle"></td>
+      <td><label for="useGoogle">Use Google to resolve favicons (Firefox only)</label></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id="faqs"></td>
+      <td><label for="faqs">Open FAQs page on updates</label></td>
+    </tr>
+  </table>
   <p>
-    <label>
-      Number of undo items displayed in the popup
-      <input type="number" id="maxResults">
-    </label>
-  </p>
-
-  <div>
     <button id="save">Save</button>
     <span id="status"></span>
-  </div>
+  </p>
 
   <script src="index.js"></script>
 </body>
