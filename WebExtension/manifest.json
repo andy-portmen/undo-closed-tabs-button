@@ -1,0 +1,43 @@
+{
+  "name": "Undo Closed Tabs Button",
+  "short_name": "iuctbutton",
+  "description": "Add a toolbar button onto any toolbar to undo closed tabs",
+  "author": "Andy Portmen",
+  "version": "0.1.2",
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "tabs",
+    "sessions",
+    "contextMenus",
+    "chrome://favicon/*"
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "common.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "data/icons/16.png",
+      "32": "data/icons/32.png"
+    },
+    "default_popup": "data/popup/index.html"
+  },
+  "homepage_url": "http://mybrowseraddon.com/undo.html",
+  "icons": {
+    "16": "data/icons/16.png",
+    "48": "data/icons/48.png",
+    "128": "data/icons/128.png"
+  },
+  "options_ui": {
+    "page": "data/options/index.html",
+    "chrome_style": true
+  },
+  "applications": {
+    "gecko": {
+      "strict_min_version": "52.0"
+    }
+  }
+}

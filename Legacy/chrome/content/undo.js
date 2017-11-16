@@ -2,6 +2,28 @@
 'use strict';
 
 var undoClosedButt = {
+  installButton: function (toolbarId, id, afterId) {
+    if (!document.getElementById(id)) {
+      var toolbar = document.getElementById(toolbarId);
+
+      // If no afterId is given, then append the item to the toolbar
+      var before = null;
+      if (afterId) {
+        var elem = document.getElementById(afterId);
+        if (elem && elem.parentNode === toolbar) {
+          before = elem.nextElementSibling;
+        }
+      }
+
+      toolbar.insertItem(id, before);
+      toolbar.setAttribute('currentset', toolbar.currentSet);
+      document.persist(toolbar.id, 'currentset');
+
+      if (toolbarId === 'addon-bar') {
+        toolbar.collapsed = false;
+      }
+    }
+  },
   session: (function () {
     var ss = Cc['@mozilla.org/browser/sessionstore;1']
       .getService(Ci.nsISessionStore);
@@ -199,14 +221,56 @@ var undoClosedButt = {
     else if (contextEntry && count < 1) {
       contextEntry.setAttribute('disabled', 'true');
     }
+  },
+  welcome: function () {
+    function welcome (version) {
+      var pre = gPrefService.getCharPref('extensions.undoclosedtabsbutton.version');
+      if (pre === version) {
+        return;
+      }
+      //Showing welcome screen
+      setTimeout(function () {
+        try {
+          var newTab = getBrowser().addTab(
+            'http://mybrowseraddon.com/undo.html?v=' + version + (pre ? '&p=' + pre + '&type=upgrade' : '&type=install')
+          );
+          getBrowser().selectedTab = newTab;
+        }
+        catch (e) {}
+      }, 5000);
+      gPrefService.setCharPref('extensions.undoclosedtabsbutton.version', version);
+    }
+
+    //Detect Firefox version
+    var version = '';
+    try {
+      version = (
+        navigator.userAgent.match(/Firefox\/([\d\.]*)/) ||
+        navigator.userAgent.match(/Thunderbird\/([\d\.]*)/)
+      )[1];
+    } catch (e) {}
+    //FF < 4.*
+    var versionComparator = Components.classes['@mozilla.org/xpcom/version-comparator;1']
+        .getService(Components.interfaces.nsIVersionComparator)
+        .compare(version, '4.0');
+    if (versionComparator < 0) {
+      var addon = Services.extMan.getItemForID('undoclosedtabsbutton@supernova00.biz');
+      welcome(addon.version);
+    }
+    //FF > 4.*
+    else {
+      Components.utils.import('resource://gre/modules/AddonManager.jsm');
+      AddonManager.getAddonByID('undoclosedtabsbutton@supernova00.biz', function (addon) {
+        welcome(addon.version);
+      });
+    }
   }
 };
 
-window.addEventListener('load', UCT_init, false);
 function UCT_init() {
   // Install Button
   if (gPrefService.getBoolPref('extensions.undoclosedtabsbutton.firstRun')) {
-    installButton('nav-bar', 'uctb-toolbar-button');
+    undoClosedButt.installButton('nav-bar', 'uctb-toolbar-button');
     gPrefService.setBoolPref('extensions.undoclosedtabsbutton.firstRun', false);
   }
   // Set hotkey
@@ -217,7 +281,7 @@ function UCT_init() {
     document.getElementById('uctb-key').setAttribute('modifiers', modifier);
   }
   // Show welcome if needed
-  showWelcome();
+  undoClosedButt.welcome();
   // Change icon if needed
   try {
     if (gPrefService.getBoolPref('extensions.undoclosedtabsbutton.oldAppearance')) {
@@ -225,12 +289,26 @@ function UCT_init() {
     }
   } catch (e) {}
   // Add context menu
-  document.getElementById('contentAreaContextMenu').addEventListener('popupshowing', onUCTBPopup, false);
+  document.getElementById('contentAreaContextMenu').addEventListener('popupshowing', function () {
+    var someConditions = !(gContextMenu.isContentSelected ||
+      gContextMenu.onLink ||
+      gContextMenu.onImage ||
+      gContextMenu.onTextInput);
+    someConditions = someConditions &&
+      !gPrefService.getBoolPref('extensions.undoclosedtabsbutton.removecontextentry');
+    gContextMenu.showItem('uctb-contextentry', someConditions);
+    gContextMenu.showItem('uctb-separator', someConditions);
+  }, false);
 
   // Add attribute to nsSessionStore persistTabAttribute after delay
   // we call this after nsSessionStore.init
   window.setTimeout(function () {
-    UCT_ss_persist();
+    if (!window.__SSi) {// nsISessionStore not initialized
+      return;
+    }
+    var ss = Cc['@mozilla.org/browser/sessionstore;1'].
+      getService(Ci.nsISessionStore);
+    ss.persistTabAttribute('image');
   }, 2000, false);
   // update button disabled on TabOpen & TabClose
   gBrowser.tabContainer.addEventListener('TabOpen',undoClosedButt.tabOpenClose,false);
@@ -246,90 +324,4 @@ function UCT_init() {
     undoClosedButt.contextEntryOpenClose();
   }, 250);
 }
-
-function UCT_ss_persist() {
-  if (!window.__SSi) {// nsISessionStore not initialized
-    return;
-  }
-  var ss = Cc['@mozilla.org/browser/sessionstore;1'].
-    getService(Ci.nsISessionStore);
-  ss.persistTabAttribute('image');
-}
-
-function onUCTBPopup() {
-  var someConditions = !(gContextMenu.isContentSelected ||
-    gContextMenu.onLink ||
-    gContextMenu.onImage ||
-    gContextMenu.onTextInput);
-  someConditions = someConditions &&
-    !gPrefService.getBoolPref('extensions.undoclosedtabsbutton.removecontextentry');
-  gContextMenu.showItem('uctb-contextentry', someConditions);
-  gContextMenu.showItem('uctb-separator', someConditions);
-}
-
-function showWelcome () {
-  function welcome (version) {
-    var pre = gPrefService.getCharPref('extensions.undoclosedtabsbutton.version');
-    if (pre === version) {
-      return;
-    }
-    //Showing welcome screen
-    setTimeout(function () {
-      try {
-        var newTab = getBrowser().addTab(
-          'http://mybrowseraddon.com/undo.html?v=' + version + (pre ? '&p=' + pre + '&type=upgrade' : '&type=install')
-        );
-        getBrowser().selectedTab = newTab;
-      }
-      catch (e) {}
-    }, 5000);
-    gPrefService.setCharPref('extensions.undoclosedtabsbutton.version', version);
-  }
-
-  //Detect Firefox version
-  var version = '';
-  try {
-    version = (
-      navigator.userAgent.match(/Firefox\/([\d\.]*)/) ||
-      navigator.userAgent.match(/Thunderbird\/([\d\.]*)/)
-    )[1];
-  } catch (e) {}
-  //FF < 4.*
-  var versionComparator = Components.classes['@mozilla.org/xpcom/version-comparator;1']
-      .getService(Components.interfaces.nsIVersionComparator)
-      .compare(version, '4.0');
-  if (versionComparator < 0) {
-    var addon = Services.extMan.getItemForID('undoclosedtabsbutton@supernova00.biz');
-    welcome(addon.version);
-  }
-  //FF > 4.*
-  else {
-    Components.utils.import('resource://gre/modules/AddonManager.jsm');
-    AddonManager.getAddonByID('undoclosedtabsbutton@supernova00.biz', function (addon) {
-      welcome(addon.version);
-    });
-  }
-}
-
-function installButton (toolbarId, id, afterId) {
-  if (!document.getElementById(id)) {
-    var toolbar = document.getElementById(toolbarId);
-
-    // If no afterId is given, then append the item to the toolbar
-    var before = null;
-    if (afterId) {
-      var elem = document.getElementById(afterId);
-      if (elem && elem.parentNode === toolbar) {
-        before = elem.nextElementSibling;
-      }
-    }
-
-    toolbar.insertItem(id, before);
-    toolbar.setAttribute('currentset', toolbar.currentSet);
-    document.persist(toolbar.id, 'currentset');
-
-    if (toolbarId === 'addon-bar') {
-      toolbar.collapsed = false;
-    }
-  }
-}
+window.addEventListener('load', UCT_init, false);
