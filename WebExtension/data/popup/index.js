@@ -1,5 +1,8 @@
 'use strict';
 
+var isFirefox = navigator.userAgent.indexOf('Firefox') !== -1;
+document.body.dataset.firefox = isFirefox;
+
 var cache = [];
 var png = chrome.runtime.getURL('/data/popup/document.png');
 
@@ -38,7 +41,7 @@ function restore(ids, urls = []) {
   }
 }
 
-chrome.storage.local.get({
+var init = () => chrome.storage.local.get({
   maxResults: 7,
   useGoogle: true
 }, prefs => {
@@ -48,15 +51,18 @@ chrome.storage.local.get({
     cache = sessions;
     const item = document.querySelector('li');
     const ul = document.querySelector('ul');
-    const lastChild = document.querySelector('.separator').parentNode;
 
     function add(tab, window) {
       const li = item.cloneNode(true);
-      li.querySelector('span').textContent = tab.title || 'No title';
-      if (navigator.userAgent.indexOf('Firefox') === -1) {
+      li.title = li.querySelector('label').textContent =
+        tab.title || 'No title';
+      if (isFirefox === false) {
         li.style['background-image'] = `url(chrome://favicon/${tab.url})`;
       }
-      else if (prefs.useGoogle) {
+      else if (tab.favIconUrl) {
+        li.style['background-image'] = `url(${tab.favIconUrl})`;
+      }
+      else if (prefs.useGoogle) { // this is not going to be called in FF > 57
         li.style['background-image'] = `url(http://www.google.com/s2/favicons?domain_url=${tab.url})`;
       }
       else {
@@ -65,7 +71,7 @@ chrome.storage.local.get({
       li.dataset.id = tab.sessionId;
       li.dataset.url = tab.url;
 
-      ul.insertBefore(li, lastChild);
+      ul.appendChild(li);
       if (window) {
         li.querySelector('div').dataset.id = window.sessionId;
       }
@@ -80,15 +86,18 @@ chrome.storage.local.get({
       }
     });
     if (sessions.length) {
-      ul.removeChild(item);
+      item.remove();
     }
     else {
       item.dataset.disabled = true;
-      document.querySelector('[data-cmd="clear-history"]').dataset.disabled = true;
+      // document.querySelector('[data-cmd="clear-history"]').dataset.disabled = true;
       document.querySelector('[data-cmd="open-all"]').dataset.disabled = true;
-
+      document.querySelector('[data-cmd="forget-tabs"]').dataset.disabled = true;
     }
   });
+});
+document.addEventListener('DOMContentLoaded', () => {
+  window.setTimeout(init, 200);
 });
 
 document.addEventListener('click', ({target}) => {
@@ -117,5 +126,23 @@ document.addEventListener('click', ({target}) => {
     chrome.browsingData.remove({}, {
       'history': true
     }, () => window.close());
+  }
+  else if (target.dataset.cmd === 'forget-tabs') {
+    const forget = session => {
+      if (session.tab) {
+        return browser.sessions.forgetClosedTab(session.tab.windowId, session.tab.sessionId);
+      }
+      else {
+        return browser.sessions.forgetClosedWindow(session.window.sessionId);
+      }
+    };
+
+    const loop = () => browser.sessions.getRecentlyClosed({}).then(sessions => {
+      console.log(sessions.length);
+      if (sessions.length) {
+        return Promise.all(sessions.map(forget)).then(loop);
+      }
+    });
+    loop().then(() => window.location.reload());
   }
 });

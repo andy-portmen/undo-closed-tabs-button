@@ -3,7 +3,7 @@
   "short_name": "iuctbutton",
   "description": "Add a toolbar button onto any toolbar to undo closed tabs",
   "author": "Andy Portmen",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "manifest_version": 2,
   "permissions": [
     "storage",
@@ -40,5 +40,11 @@
   "options_ui": {
     "page": "data/options/index.html",
     "chrome_style": true
+  },
+  "applications": {
+    "gecko": {
+      "id": "{5997e7bd-1940-4058-a5f4-1562afce6353}",
+      "strict_min_version": "52.0"
+    }
   }
 }

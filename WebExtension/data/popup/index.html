@@ -5,11 +5,15 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <ul>
-      <li><div title="Open all Tabs"></div><span>Nothing to Restore!</span></li>
-      <li data-cmd="open-all"><span class="separator">Open All in Tabs</span></li>
+    <ul class="menu">
+      <li><div title="Open all Tabs"></div><span><label>Nothing to Restore!</label></span></li>
+    </ul>
+    <span class="separator"></span>
+    <ul class="tools">
+      <li data-cmd="open-all"><span>Open All in Tabs</span></li>
       <li data-cmd="open-history"><span>Show Full History</span></li>
       <li data-cmd="clear-history"><span>Clear History</span></li>
+      <li data-cmd="forget-tabs"><span title="Removes closed tabs from the browser's list of recently closed tabs">Forget Closed Tabs</span></li>
     </ul>
     <script src="index.js"></script>
   </body>

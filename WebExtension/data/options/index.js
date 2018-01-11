@@ -14,7 +14,7 @@ function restore() {
 function save() {
   var maxResults = Number(document.getElementById('maxResults').value);
   chrome.storage.local.set({
-    maxResults: Math.max(2, maxResults),
+    maxResults: Math.min(chrome.sessions.MAX_SESSION_RESULTS, Math.max(2, maxResults)),
     useGoogle: document.getElementById('useGoogle').checked,
     faqs: document.getElementById('faqs').checked,
   }, () => {
